@@ -120,7 +120,7 @@ function Lista(){
 
   return (
 
-   <ul style={ {height: "350px", paddingTop: '60px'} } className='flex flex-col gap-5 items-center justify-evenly w-full font-Monserrat scroll-smooth relative overflow-scroll no-scrollbar font-extrabold tracking-widest text-lg'><Button></Button></ul>
+   <ul style={ {height: "100%", } } className='flex flex-col items-center gap-6 w-full font-Monserrat relative font-extrabold tracking-widest text-lg'><Button></Button></ul>
 
   );
 
@@ -139,17 +139,17 @@ function App() {
 
       <div className='bg-transparent rounded-lg w-full h-full flex absolute top-0 left-0 justify-center items-end'>
 
-        <div id='manejaColorTexto' className=' text-white pt-20 overflow-y-auto rounded-lg overflow-hidden px-4 h-full relative flex flex-col gap-6  items-start  w-full '> 
+        <div id='manejaColorTexto' className='text-white pt-20 pb-20 rounded-lg overflow-hidden px-4 h-full flex flex-col justify-between w-full '> 
           
-          <div id='texto' style={ {paddingLeft: "190px"} } >
+          <div id='texto' style={ {paddingLeft: "60%"} } >
           
           <h1 style={{fontFamily: 'Fredoka'}} className='text-shadow-red-800 text-shadow-lg text-4xl leading-[1.2]'>Joha Bettina</h1>
           
           </div>
 
-          
+          <div id='lista' class='flex items-end '>
           {Lista()}
-          
+          </div>
     
     </div>   
     </div>
