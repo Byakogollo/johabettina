@@ -1,0 +1,175 @@
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1.1rem 1.6rem;
+  background: transparent;
+  backdrop-filter:none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid  rgba(255, 255, 255, 0.45);
+  border-radius: 3px;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  animation: slideUp 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.btn:hover {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.85);   
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Accent highlight on left edge when hovered */
+.btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-accent);
+  border-radius: 2px 0 0 2px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btnEmoji {
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+.btnLabel {
+  flex: 1;
+  text-align: left;
+}
+
+.arrow2 {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-left: auto;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.btn:hover .arrow2 {
+  transform: translateX(3px);
+  color: var(--color-accent);
+}
+
+/* ---- Group / Dropdown ---- */
+.group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  animation: slideUp 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.groupToggle {
+  border-radius: 3px;
+  text-align: left;
+}
+
+.groupToggle.groupOpen {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: transparent;
+  background: transparent;
+}
+
+.arrow {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-left: auto;
+  transition: transform var(--transition-med), color var(--transition-fast);
+  display: inline-block;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+}
+
+/* Dropdown container with animated height */
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-med);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.dropdownOpen {
+  max-height: 400px;
+}
+
+.dropdownLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem 0.75rem 2.15rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  background: transparent;
+  backdrop-filter:none;
+  border-top: 1px solid var(--color-border);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdownLink:first-child {
+  border-top: none;
+}
+
+.dropdownLink:hover {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.dropdownLink:hover .arrow2 {
+  color: var(--color-accent);
+  transform: translateX(3px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
